@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  color: #111;
+  background: #edeff0 url("../svgs/background.svg");
+}
+
+#container {
+  max-width: 960px;
+  background: #fff;
+  margin: 0 auto;
+  height: 100%; /* new line */
+}
+
+p {
+  max-width: 350px;
+  margin: 35px auto 0;
+  line-height: 2em;
+  text-align: left;
+}
+
+/* Navigation Links*/
+  
+a {
+  text-decoration: none;
+  color: #39add1;
+  font-weight: 700;
+}
+
+a:hover {
+  color: red;
+}
+
+a:hover path {
+  fill: red;
+}
+
+.nav {
+  transition: transform .1s ease-out;
+}
+
+.nav:hover {
+  transform: scale(1.3);
+}
+
+/* This is an experimental technology */
+.menu * {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.menu li {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.heart-nav {
+  transition: transform .5s ease-out;
+}
+
+header {
+  padding-top: 10px;
+}
+
+header nav {
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+main {
+  padding-top: 50px;
+}
+
+main h2 {
+  font-size: 28px;
+}
+
+.sable {
+  color: #ba7c58;
+}
+.fawn {
+  color: #eaaa7f;
+}
+.red {
+  color: #774402;
+}
+.stone {
+  color: #52595f;
+}
+
+footer {
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  color: #ba8058;
+}
+
+.logo-text {
+  display: none;
+}
+
+.animal-label {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  color: #eaaa7f;
+}
+
+/* Media query rules */
+
+@media (min-width: 425px){
+  .menu li {
+    display: inline-flex;
+  }
+ 
+  .logo-text {
+    display: block;
+  }
+  #hidden {
+    display: none;
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 60px;
+    margin-right: 70px;
+  }
+  .wrapper > .fill-colors {
+    margin-left: 20px;
+  }
+}
+
+/* Keyframes */
+
+@keyframes spin {
+  50% {
+    transform: rotate(375deg) scale(1.2);
+  }
+  80% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide {
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+  80% {
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadein{
+  0%  {opacity: 0;}
+  80% {opacity:0}
+  100%{opacity:1}
+}
+
+@keyframes resize {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15) rotate(-5deg);
+    opacity: 1;
+    fill: #fdf097;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* This is an experimental technology */
+.logo * {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.paw {
+  animation: fadein 1s ease forwards, resize .5s ease-out 2s forwards;
+}
+
+.logo-text {
+  animation: fadein 2s ease forwards;
+}
+
+.logo:hover .paw {
+  animation: spin .5s ease-out backwards;
+}
+
+.logo:hover .logo-text {
+  fill: #d2691e;
+}
+
+.rounded {
+  transform: translate3d(0, -180px, 0);
+  animation: slide .5s forwards;
+  transition: 2s ease-out;
+}
+
+.logo:hover .rounded {
+  fill: rgba(186, 128, 88, 0.8);
+}
